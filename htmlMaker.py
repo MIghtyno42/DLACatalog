@@ -21,11 +21,10 @@ with open("newfile.csv","r") as input_File:
 		for entry in listcsv:
 			
 			if (entry[23] != ""):
-				output_File.write("\t\t\t<div style = \"width:100%;height:300px\">\n") 
+				output_File.write("\t\t\t<div id=\"wrapper\" style = \"width:100%;overflow:auto\">\n") 
 				titleString = "\t\t\t\t<h2 align = \"left\">"+ str(entry[13])+ "</h2>"
 
 				output_File.write(titleString+"\n") 
-				output_File.write("\t\t\t\t<hr style = \"height:1px;border:none;background-color:#333;\">\n")
 				output_File.write("\t\t\t\t<div style = \"width:20%; float:left;\">\n")
 				output_File.write("\t\t\t\t\t<h4 align = \"left\">Contact Info</h4>\n")
 				output_File.write("\t\t\t\t\t<p>\n")
@@ -57,6 +56,7 @@ with open("newfile.csv","r") as input_File:
 				output_File.write("\t\t\t\t\t</p>\n")
 				output_File.write("\t\t\t\t</div>\n")
 				output_File.write("\t\t\t</div>\n")
+				output_File.write("\t\t\t<hr style = \"height:1px;border:none;background-color:#333;\">\n")
 			
 		output_File.write("\t</body>\n")
 		output_File.write("</html>\n")

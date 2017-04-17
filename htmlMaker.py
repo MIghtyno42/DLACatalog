@@ -1,9 +1,9 @@
 import csv
 
 
-majorlist = ["ASEN","AREN","APPM","CHEN","CBEN","CSEN","CVEN","EEEN","ECEN","EPEN", "EVEN", "MCEN","TMEN"]
-realNames = ["Aerospace Engineering Sciences", "Architectural Engineering", "Applied Mathematics", "Chemical Engineering","Chemical and Biological Engineering", "Computer Science", "Civil Engineering", "Electrical Engineering", "Electrical and Computer Engineering", "Engineering Physics", "Environmental Engineering", "Mechanical Engineering","Technology, Arts and Media"]
-columnNumbers = [16, 18, 17, 19, 20, 22, 21, 23, 24, 25, 27, 28, 29]
+majorlist = ["ASEN","AREN","APPM","CHEN","CBEN","CSEN","CVEN","EEEN","ECEN","EPEN", "EVEN", "MCEN","TMEN", "GEEN"]
+realNames = ["Aerospace Engineering Sciences", "Architectural Engineering", "Applied Mathematics", "Chemical Engineering","Chemical and Biological Engineering", "Computer Science", "Civil Engineering", "Electrical Engineering", "Electrical and Computer Engineering", "Engineering Physics", "Environmental Engineering", "Mechanical Engineering","Technology, Arts and Media", "Engineering Plus"]
+columnNumbers = [16, 18, 17, 19, 20, 22, 21, 23, 24, 25, 27, 28, 29, 26]
 
 position = 0
 for major in majorlist:	
@@ -17,7 +17,7 @@ for major in majorlist:
 			output_File.write("\t\t<meta charset=\"utf-8\">\n") 
 			
 			
-			output_File.write("\t\t<title>CU Boulder DLAs for" + major + " </title>\n") 
+			output_File.write("\t\t<title>CU Boulder DLAs for " + major + " </title>\n") 
 			output_File.write("\t<head>\n") 
 			output_File.write("\t<body>\n") 
 			
@@ -69,6 +69,7 @@ for major in majorlist:
 					output_File.write("\t\t\t\t</div>\n")
 					output_File.write("\t\t\t</div>\n")
 					output_File.write("\t\t\t<hr style = \"height:1px;border:none;background-color:#333;\">\n")
+					output_File.write("\t\t\t<p align = \"center\"><a href = \"majorSelector.html\">Return to List of Majors</a></p>\n")
 					
 			output_File.write("\t</body>\n")
 			output_File.write("</html>\n")

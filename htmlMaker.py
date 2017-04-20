@@ -2,8 +2,8 @@ import csv
 
 
 majorlist = ["ASEN","AREN","APPM","CHEN","CBEN","CSEN","CVEN","EEEN","ECEN","EPEN", "EVEN", "MCEN","TMEN", "GEEN"]
-realNames = ["Aerospace Engineering Sciences", "Architectural Engineering", "Applied Mathematics", "Chemical Engineering","Chemical and Biological Engineering", "Computer Science", "Civil Engineering", "Electrical Engineering", "Electrical and Computer Engineering", "Engineering Physics", "Environmental Engineering", "Mechanical Engineering","Technology, Arts and Media", "Engineering Plus"]
-columnNumbers = [51, 53, 52, 54, 55, 57, 56, 58,59 , 60,62 , 63, 64, 61]
+realNames = ["Aerospace Engineering Sciences", "Architectural Engineering", "Applied Mathematics", "Chemical Engineering","Chemical and Biological Engineering", "Computer Science", "Civil Engineering", "Electrical Engineering", "Electrical & Computer Engineering", "Engineering Physics", "Environmental Engineering", "Mechanical Engineering","Technology, Arts and Media", "Engineering Plus"]
+columnNumbers = [51, 53, 52, 54, 55, 57, 56, 58, 59, 60, 62, 63, 64, 61]
 
 position = 0
 for major in majorlist:	
@@ -15,7 +15,7 @@ for major in majorlist:
 			output_File.write("<!DOCTYPE html>\n") 
 			output_File.write("<html lang=\"en\">\n") 
 			output_File.write("\t<head>\n") 
-			output_File.write("\t\t<meta charset=\"utf-8\">\n") 
+			output_File.write("\t\t<meta http-equiv=\Content-Type\" content=\"text/html; charset=utf-8\">\n") 
 			
 			
 			output_File.write("\t\t<title>CU Boulder DLAs for " + major + " </title>\n") 
@@ -51,6 +51,7 @@ for major in majorlist:
 						fullNameStr = entry[32] + " " + entry[33]
 						output_File.write("\t\t\t\t\t<p></p>\n")
 						output_File.write("\t\t\t\t\t\t"+str(fullNameStr)+"<br />\n")
+						output_File.write("\t\t\t\t\t\t"+str(entry[36])+"<br />\n")
 						output_File.write("\t\t\t\t\t\t"+str(entry[34])+"<br />\n")
 						output_File.write("\t\t\t\t\t\t"+str(entry[35])+"\n")
 							
@@ -60,7 +61,11 @@ for major in majorlist:
 					output_File.write("\t\t\t\t\t<h4 align = \"left\">Description</h4>\n")
 					if ("http" in entry [50] or "www" in entry[50] or "https" in entry[50] or ".com" in entry[50] or ".edu" in entry[50] or ".net" in entry[50] or ".gov" in entry[50]):
 						output_File.write("\t\t\t\t\t\t<a href = \"" + str(entry[50]) + "\">"+str(entry[50])+"\n")
-						output_File.write("\t\t\t\t</a>\n")			
+						output_File.write("\t\t\t\t</a>\n")	
+					if (entry[23] == "Fatemeh"):
+						output_File.write("\t\t\t\t\t\t<a href = \"DLA_Abstract_FP.PDF\" download>\n")
+						output_File.write("\t\t\t\t\t\t PDF details of project </a>\n")
+				
 						
 					output_File.write("\t\t\t\t\t<ul style = \"list-style-type-disc\">\n")
 			
@@ -69,10 +74,10 @@ for major in majorlist:
 					output_File.write("\t\t\t\t</li>\n")
 					if (entry[67] != ""):
 						if (entry[68] != ""):
-							output_File.write("\t\t\t\t\t\t<li>"+str(entry[67]) + ". " + str(entry[68])+"\n")
+							output_File.write("\t\t\t\t\t\t<li>Supervision details: "+str(entry[67]) + ". " + str(entry[68])+"\n")
 							output_File.write("\t\t\t\t</li>\n")
 						else:
-							output_File.write("\t\t\t\t\t\t<li>"+str(entry[67])+"\n")
+							output_File.write("\t\t\t\t\t\t<li>Supervision details: "+str(entry[67])+"\n")
 							output_File.write("\t\t\t\t</li>\n")
 					if (entry[69] != ""):
 						if (entry[69] == "Other, specify:"):
@@ -85,6 +90,10 @@ for major in majorlist:
 							else:
 								output_File.write("\t\t\t\t\t\t<li> Nature of work: "+str(entry[69]) + ". " + str(entry[70])+"\n")
 								output_File.write("\t\t\t\t</li>\n")
+					
+					if (entry[71] !=""):
+						output_File.write("\t\t\t\t\t\t<li> Expectations of applicant's prior work: "+str(entry[71])+"\n")
+						output_File.write("\t\t\t\t</li>\n")
 															
 					output_File.write("\t\t\t\t</div>\n")
 					output_File.write("\t\t\t\t<div style=\"width:38%;float:left;\">\n")

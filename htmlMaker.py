@@ -45,7 +45,7 @@ for major in majorlist:
 					output_File.write("\t\t\t\t\t\t"+str(entry[14])+"<br />\n")
 					output_File.write("\t\t\t\t\t\t"+str(entry[27])+"<br />\n")
 					output_File.write("\t\t\t\t\t\t"+str(entry[25])+"<br />\n")
-					output_File.write("\t\t\t\t\t\t"+str(entry[26])+"\n")
+					output_File.write("\t\t\t\t\t\t"+str(entry[26])+"<br />\n")
 						
 					if (entry[33] != ""):
 						fullNameStr = entry[32] + " " + entry[33]
@@ -77,8 +77,9 @@ for major in majorlist:
 					
 					
 					output_File.write("\t\t\t\t\t<p>\n")
-					output_File.write("\t\t\t\t\t\t<li>"+str(entry[49])+"\n")
-					output_File.write("\t\t\t\t</li>\n")
+					if (entry[49] != ""):
+						output_File.write("\t\t\t\t\t\t<li>"+str(entry[49])+"\n")
+						output_File.write("\t\t\t\t</li>\n")
 					if (entry[67] != ""):
 						if (entry[68] != ""):
 							output_File.write("\t\t\t\t\t\t<li>Supervision details: "+str(entry[67]) + ". " + str(entry[68])+"\n")

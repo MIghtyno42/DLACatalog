@@ -105,7 +105,7 @@ for major in majorlist:
 					output_File.write("\t\t\t\t\t</p>\n")
 					output_File.write("\t\t\t\t</div>\n")
 					output_File.write("\t\t\t</div>\n")
-					output_File.write("\t\t\t<p align = \"center\"><a href = \"majorSelector.html\">Return to List of Majors</a></p>\n")
+					output_File.write("\t\t\t<p align = \"center\"><a href = \"https://sites.google.com/a/colorado.edu/majselection/home\">Return to List of Majors</a></p>\n")
 					output_File.write("\t\t\t<hr style = \"height:1px;border:none;background-color:#333;\">\n")
 					
 					

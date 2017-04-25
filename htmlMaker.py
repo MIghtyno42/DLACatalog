@@ -7,10 +7,10 @@ columnNumbers = [51, 53, 52, 54, 55, 57, 56, 58, 59, 60, 62, 63, 64, 61]
 
 position = 0
 for major in majorlist:	
-	with open("2017.04.18_Project Listings DLA.csv","r") as input_File:
+	with open("NEW PROJECT LISTINGS 2017.04.25.csv","r") as input_File:
 		next(input_File)
 		next(input_File)
-		fileString = major + "File.html"
+		fileString = "DLA_Proj/" + major + "File.html"
 		with open (fileString,"w") as output_File:
 			output_File.write("<!DOCTYPE html>\n") 
 			output_File.write("<html lang=\"en\">\n") 
@@ -38,7 +38,7 @@ for major in majorlist:
 					output_File.write("\t\t\t<div id=\"wrapper\" style = \"width:100%;overflow:auto\">\n") 
 					titleString = "\t\t\t\t<h2 align = \"left\">"+ str(entry[47])+ "</h2>"
 					output_File.write(titleString+"\n") 
-					output_File.write("\t\t\t\t<div style = \"width:20%; float:left;\">\n")
+					output_File.write("\t\t\t\t<div style = \"width:20%; float:left;word-wrap:break-word\">\n")
 					output_File.write("\t\t\t\t\t<h4 align = \"left\">Contact Info</h4>\n")
 					output_File.write("\t\t\t\t\t<p>\n")
 
@@ -61,16 +61,23 @@ for major in majorlist:
 					output_File.write("\t\t\t\t\t<h4 align = \"left\">Description</h4>\n")
 					if ("http" in entry [50] or "www" in entry[50] or "https" in entry[50] or ".com" in entry[50] or ".edu" in entry[50] or ".net" in entry[50] or ".gov" in entry[50]):
 						output_File.write("\t\t\t\t\t\t<a href = \"" + str(entry[50]) + "\">"+str(entry[50])+"\n")
-						output_File.write("\t\t\t\t</a>\n")	
-					if (entry[23] == "Fatemeh"):
-						output_File.write("\t\t\t\t\t\t<a href = \"DLA_Abstract_FP.PDF\" download>\n")
-						output_File.write("\t\t\t\t\t\t PDF details of project </a>\n")
+						output_File.write("\t\t\t\t</a>\n")
 				
 						
 					output_File.write("\t\t\t\t\t<ul style = \"list-style-type-disc\">\n")
 			
-					output_File.write("\t\t\t\t\t\t<li>"+str(entry[48])+"\n")
+					output_File.write("\t\t\t\t\t\t<p>"+str(entry[48])+"\n")
 
+					output_File.write("\t\t\t\t</p>\n")
+															
+					output_File.write("\t\t\t\t</div>\n")
+					output_File.write("\t\t\t\t<div style=\"width:38%;float:left;\">\n")
+					output_File.write("\t\t\t\t\t<h4 align = \"left\">Requirements</h4>\n")
+					
+					
+					
+					output_File.write("\t\t\t\t\t<p>\n")
+					output_File.write("\t\t\t\t\t\t<li>"+str(entry[49])+"\n")
 					output_File.write("\t\t\t\t</li>\n")
 					if (entry[67] != ""):
 						if (entry[68] != ""):
@@ -92,17 +99,8 @@ for major in majorlist:
 								output_File.write("\t\t\t\t</li>\n")
 					
 					if (entry[71] !=""):
-						output_File.write("\t\t\t\t\t\t<li> Expectations of applicant's prior work: "+str(entry[71])+"\n")
+						output_File.write("\t\t\t\t\t\t<li> Amount of prior work completed on project: "+str(entry[71])+"\n")
 						output_File.write("\t\t\t\t</li>\n")
-															
-					output_File.write("\t\t\t\t</div>\n")
-					output_File.write("\t\t\t\t<div style=\"width:38%;float:left;\">\n")
-					output_File.write("\t\t\t\t\t<h4 align = \"left\">Requirements</h4>\n")
-					
-					
-					
-					output_File.write("\t\t\t\t\t<p>\n")
-					output_File.write("\t\t\t\t\t\t"+str(entry[49])+"\n")
 
 					output_File.write("\t\t\t\t\t</p>\n")
 					output_File.write("\t\t\t\t</div>\n")

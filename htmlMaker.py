@@ -46,6 +46,7 @@ for major in majorlist:
 					output_File.write("\t\t\t\t\t\t"+str(entry[27])+"<br />\n")
 					output_File.write("\t\t\t\t\t\t"+str(entry[25])+"<br />\n")
 					output_File.write("\t\t\t\t\t\t"+str(entry[26])+"<br />\n")
+					output_File.write("\t\t\t\t\t\t<br />\n")
 						
 					if (entry[33] != ""):
 						fullNameStr = entry[32] + " " + entry[33]
